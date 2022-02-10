@@ -17,6 +17,7 @@ Imports:
     tidyselect
 RoxygenNote: 7.1.2
 Suggests:
+    remotes,
     testthat (>= 3.0.0),
     tibble
 Config/testthat/edition: 3
