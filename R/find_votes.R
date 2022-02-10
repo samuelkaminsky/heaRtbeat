@@ -18,7 +18,7 @@ find_votes <- function(data, cols, threshold = 1) {
         ),
       individual.mean = rowMeans(likert.cols, na.rm = TRUE),
       dplyr::across(tidyselect::all_of(names(likert.cols)), ~
-        case_when(
+        dplyr::case_when(
           threshold <
           dplyr::if_else(
             .data$individual.sd == 0, 0,
