@@ -1,9 +1,12 @@
+#' Find up-votes and down-votes
+#' @param data A data frame, data frame extension (e.g. a tibble). See Methods, 
+#' below, for more details.
+
 #' @export
-find_votes <- function(data, ..., threshold = 1) {
-  assertthat::assert_that(is.data.frame(data))
+find_votes <- function(data, cols, threshold = 1) {
   assertthat::assert_that(threshold > 0,
     msg = "Please a positive number of standard deviations above the mean to define an upvote.")
-  likert.cols <- dplyr::select(data, {{ ... }})
+  likert.cols <- dplyr::select(data, {{ cols }})
   output <-
     data %>%
     dplyr::mutate(
@@ -14,7 +17,7 @@ find_votes <- function(data, ..., threshold = 1) {
           ) / (rowSums(!is.na(likert.cols)) - 1)
         ),
       individual.mean = rowMeans(likert.cols, na.rm = TRUE),
-      dplyr::across(tidyselect::all_of(...), ~
+      dplyr::across(tidyselect::all_of(names(likert.cols)), ~
         case_when(
           threshold <
           dplyr::if_else(
