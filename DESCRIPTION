@@ -2,10 +2,10 @@ Type: Package
 Package: heaRtbeat
 Title: Heartbeat Analysis for R
 Version: 0.0.1
-Author: Justin Purl <justin.purl@gmail.com>, Samuel Kaminsky
-    <samuel.e.kaminsky@gmail.com>
-Maintainer: Justin Purl <justin.purl@gmail.com>, Samuel Kaminsky
-    <samuel.e.kaminsky@gmail.com>
+Authors@R: c(
+    person("Justin", "Purl", , "justin.purl@gmail.com", role = "aut"),
+    person("Samuel", "Kaminsky", , "samuel.e.kaminsky@gmail.com", role = "ctb"),
+  )
 Description: Transforms survey data into upvotes/downvotes using Heartbeat
     Analysis.
 License: GPL (>= 3)
