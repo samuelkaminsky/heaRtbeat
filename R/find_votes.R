@@ -1,6 +1,10 @@
 #' Find up-votes and down-votes
-#' @param data A data frame, data frame extension (e.g. a tibble). See Methods, 
-#' below, for more details.
+#' @param data A data frame, data frame extension (e.g. a tibble).
+#' @param cols <[`tidy-select`][dplyr_tidy_select]> One or more unquoted
+#'   expressions separated by commas. Variable names can be used as if they
+#'   were positions in the data frame, so expressions like `x:y` can
+#'   be used to select a range of variables.
+#' @param threshold Threshold for heartbeat analysis.
 
 #' @export
 find_votes <- function(data, cols, threshold = 1) {
