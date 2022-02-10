@@ -7,8 +7,14 @@
 find_votes(data, cols, threshold = 1)
 }
 \arguments{
-\item{data}{A data frame, data frame extension (e.g. a tibble). See Methods, 
-below, for more details.}
+\item{data}{A data frame, data frame extension (e.g. a tibble).}
+
+\item{cols}{<[`tidy-select`][dplyr_tidy_select]> One or more unquoted
+expressions separated by commas. Variable names can be used as if they
+were positions in the data frame, so expressions like `x:y` can
+be used to select a range of variables.}
+
+\item{threshold}{Threshold for heartbeat analysis.}
 }
 \description{
 Find up-votes and down-votes
